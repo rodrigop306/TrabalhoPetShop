@@ -40,33 +40,33 @@ Connection con;
 
 	public List<Exame> retornaDados() {
 		List<Exame> exam = new ArrayList<Exame>();
-		Conexao c = new Conexao();
-		con = c.abrir();
-		PreparedStatement p;
-		try {
-			p = con.prepareStatement("select * from tbExame");
-			ResultSet rs = p.executeQuery();
-			while(rs.next()){
-				Exame e = new Exame();
-				c1.setDataMarcacao(rs.getDate("dataMarcacao"));
-				c1.setDataConsulta(rs.getDate("dataConsulta"));
-				c1.setHoraConsulta(rs.getDate("horaConsulta"));
-				c1.setEncaminhamentoExame(rs.getInt("encaminhamentoExame"));
-				c1.setPrecoTotalConsulta(rs.getDouble("precoTotalConsulta"));
-				c1.setResultadoConsulta(rs.getString("resultadoConsulta"));
-				c1.setMortePet(rs.getInt("mortePet"));
-				c1.setCodPet(rs.getInt("codPet"));
-				c1.setCodVeterinario(rs.getInt("codVeterinario"));
-				c1.setCodAtendente(rs.getInt("codAtendente"));
-				c1.setCodTipoConsulta(rs.getInt("codTipoConsulta"));
-				exam.add(c1);
-			}
-		rs.close();
-		p.close();
-		con.close();
-		} catch (SQLException ex) {
-			System.out.print("Erro ao listar atendentes");
-		}		
+//		Conexao c = new Conexao();
+//		con = c.abrir();
+//		PreparedStatement p;
+//		try {
+//			p = con.prepareStatement("select * from tbExame");
+//			ResultSet rs = p.executeQuery();
+//			while(rs.next()){
+//				Exame e = new Exame();
+//				c1.setDataMarcacao(rs.getDate("dataMarcacao"));
+//				c1.setDataConsulta(rs.getDate("dataConsulta"));
+//				c1.setHoraConsulta(rs.getDate("horaConsulta"));
+//				c1.setEncaminhamentoExame(rs.getInt("encaminhamentoExame"));
+//				c1.setPrecoTotalConsulta(rs.getDouble("precoTotalConsulta"));
+//				c1.setResultadoConsulta(rs.getString("resultadoConsulta"));
+//				c1.setMortePet(rs.getInt("mortePet"));
+//				c1.setCodPet(rs.getInt("codPet"));
+//				c1.setCodVeterinario(rs.getInt("codVeterinario"));
+//				c1.setCodAtendente(rs.getInt("codAtendente"));
+//				c1.setCodTipoConsulta(rs.getInt("codTipoConsulta"));
+//				exam.add(c1);
+//			}
+//		rs.close();
+//		p.close();
+//		con.close();
+//		} catch (SQLException ex) {
+//			System.out.print("Erro ao listar atendentes");
+//		}		
 		return exam;	
 	}
 
@@ -97,34 +97,34 @@ Connection con;
 
 	public List<Exame> pesquisaEspecifica(int cod) {
 		List<Exame> exam = new ArrayList<Exame>();
-		Conexao c = new Conexao();
-		con = c.abrir();
-		PreparedStatement p;
-		try {
-			p = con.prepareStatement("SELECT * from tbExame WHERE loginAtendente = ?");
-			p.setInt(1, cod);
-			ResultSet rs = p.executeQuery();
-			while(rs.next()){
-				Exame e = new Exame();
-				c1.setDataMarcacao(rs.getDate("dataMarcacao"));
-				c1.setDataConsulta(rs.getDate("dataConsulta"));
-				c1.setHoraConsulta(rs.getDate("horaConsulta"));
-				c1.setEncaminhamentoExame(rs.getInt("encaminhamentoExame"));
-				c1.setPrecoTotalConsulta(rs.getDouble("precoTotalConsulta"));
-				c1.setResultadoConsulta(rs.getString("resultadoConsulta"));
-				c1.setMortePet(rs.getInt("mortePet"));
-				c1.setCodPet(rs.getInt("codPet"));
-				c1.setCodVeterinario(rs.getInt("codVeterinario"));
-				c1.setCodAtendente(rs.getInt("codAtendente"));
-				c1.setCodTipoConsulta(rs.getInt("codTipoConsulta"));
-				exam.add(e);
-			}
-		rs.close();
-		p.close();
-		con.close();
-		} catch (SQLException e) {
-			JOptionPane.showMessageDialog(null, "Nenhuma dado encontrado");
-		}		
+//		Conexao c = new Conexao();
+//		con = c.abrir();
+//		PreparedStatement p;
+//		try {
+//			p = con.prepareStatement("SELECT * from tbExame WHERE loginAtendente = ?");
+//			p.setInt(1, cod);
+//			ResultSet rs = p.executeQuery();
+//			while(rs.next()){
+//				Exame e = new Exame();
+//				c1.setDataMarcacao(rs.getDate("dataMarcacao"));
+//				c1.setDataConsulta(rs.getDate("dataConsulta"));
+//				c1.setHoraConsulta(rs.getDate("horaConsulta"));
+//				c1.setEncaminhamentoExame(rs.getInt("encaminhamentoExame"));
+//				c1.setPrecoTotalConsulta(rs.getDouble("precoTotalConsulta"));
+//				c1.setResultadoConsulta(rs.getString("resultadoConsulta"));
+//				c1.setMortePet(rs.getInt("mortePet"));
+//				c1.setCodPet(rs.getInt("codPet"));
+//				c1.setCodVeterinario(rs.getInt("codVeterinario"));
+//				c1.setCodAtendente(rs.getInt("codAtendente"));
+//				c1.setCodTipoConsulta(rs.getInt("codTipoConsulta"));
+//				exam.add(e);
+//			}
+//		rs.close();
+//		p.close();
+//		con.close();
+//		} catch (SQLException e) {
+//			JOptionPane.showMessageDialog(null, "Nenhuma dado encontrado");
+//		}		
 		return exam;
 	}
 		
